@@ -278,8 +278,8 @@ class HourlyCronHandler(BaseRequestHandler):
 			self.response.out.write('Delayed.')
 			return
 
-		emails = model.Email.all().fetch(1000)
-		phones = model.Phone.all().fetch(1000)
+		emails = [x for x in model.Email.all().fetch(1000) if x.confirmed]
+		phones = [x for x in model.Phone.all().fetch(1000) if x.confirmed]
 		count = 0 # количество поставленных в очередь событий
 		now = util.now()
 
