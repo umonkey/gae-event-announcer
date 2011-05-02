@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>{% block title %}Dead Channel{% endblock %}</title>
+    <!--
+    -->
+    <link rel="stylesheet" type="text/css" href="/static/jcarousel/skins/tango/skin.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/screen.css"/>
+    <link rel="alternate" type="application/rss+xml" title="Афиша в RSS" href="http://feeds.feedburner.com/deadchannel/events"/>
+    <link rel="edit" title="Добавить" href="/submit"/>
+    <link rel="shortcut icon" type="image/jpeg" href="/favicon.ico"/>
+    <script type="text/javascript" src="/static/jquery-1.4.3.min.js"></script>
+    <script type="text/javascript" src="/static/jcarousel/lib/jquery.jcarousel.min.js"></script>
+    <script type="text/javascript" src="/static/scripts.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function(){
+        jQuery('#jc').jcarousel({
+          {% if start_event %}start: {{ start_event }},{% endif %}
+          initCallback: init_carousel
+        });
+      });
+    </script>
+    {% if gaid %}<script type="text/javascript"> var _gaq = _gaq || []; _gaq.push(['_setAccount', '{{ gaid }}']); _gaq.push(['_trackPageview']); (function() { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); })();</script>{% endif %}
+  </head>
+  <body id="dc">
+    <div id="wrapper">
+      <h1>{% block header %}Тёмная сцена питера{% endblock %}</h1>
+      {% block content %}
+      <p>Здесь должно быть что-то, о чём разработчик сайта ЗАБЫЛ.</p>
+      {% endblock %}
+    </div><!-- #wrapper -->
+  </body>
+</html>

@@ -1,0 +1,9 @@
+# http://code.google.com/intl/ru-RU/appengine/docs/python/config/cron.html
+
+cron:
+- description: send notifications
+  url: /cron/hourly
+  schedule: every 1 hours
+- description: backup subscribers
+  url: /cron/daily
+  schedule: every 24 hours

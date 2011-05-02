@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+<channel>
+<language>ru-RU</language>
+<docs>http://blogs.law.harvard.edu/tech/rss</docs>
+<generator>deadchannel.ru</generator>
+<title>Индустриальная афиша Санкт-Петербурга</title>
+<link>http://www.deadchannel.ru/</link>
+{% for event in events %}
+<item>
+<title>{{ event.title }}</title>
+<link>{{ event.url }}</link>
+<guid>{{ event.url }}</guid>
+<pubDate>{{ event.date|date:"r" }}</pubDate>
+</item>
+{% endfor %}
+</channel>
+</rss>

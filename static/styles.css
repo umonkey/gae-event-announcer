@@ -1,0 +1,123 @@
+body {
+	margin: 0;
+	padding: 10px;
+	background-color: white;
+	color: black;
+}
+a {
+	color: #008;
+}
+h1 {
+	font-size: 1.8em;
+	font-weight: bold;
+	font-family: Georgia, serif;
+}
+h2 {
+	font: 1.4em normal sans-serif;
+	margin: 0 0 .25em;
+}
+p {
+	margin: .5em 0;
+	color: #333;
+}
+
+.hidden {
+	display: none;
+}
+
+#wrapper {
+	width: 400px;
+	margin: 0 auto;
+	position: relative;
+}
+
+#motto {
+	color: gray;
+	font-family: serif;
+}
+
+.oops {
+	color: red;
+	font-style: italic;
+}
+
+#events {
+	width: 400px;
+	margin: 0 auto;
+	border: solid 1px #ccc;
+	border-collapse: collapse;
+}
+#events td {
+	padding: 4px 4px;
+}
+#events .date {
+	white-space: nowrap;
+}
+#events .title {
+	width: 100%;
+}
+#events tr:nth-child(even) {
+	background-color: #e0e0e0;
+	color: #333;
+}
+
+#subscribe {
+	margin-top: 2em;
+}
+#subscribe .message {
+	color: #080;
+}
+
+#sidebar {
+	position: absolute;
+	top: 0;
+	left: 440px;
+	width: 200px;
+	opacity: 0.8;
+}
+#sidebar p {
+	margin: 1em 0 2em;
+}
+
+form {
+	width: 400px;
+	margin: 1em auto 0;
+	text-align: left;
+}
+form div {
+	margin: 0 0 .5em;
+}
+form label {
+	display: block;
+	margin: 0 0 .25em;
+}
+form input.text {
+	width: 400px;
+	border: solid 1px #bbb;
+	padding: 4px 6px;
+	background: white url(data:image/gif;base64,R0lGODlhAQAFAKIAAPHx8e7u7vv7+/b29v///wAAAAAAAAAAACH5BAAAAAAALAAAAAABAAUAAAMEGDBCCQA7) repeat-x scroll center top;
+}
+form .hint {
+	margin: 0;
+	color: gray;
+	font-style: italic;
+	font-size: 80%;
+	font-family: serif;
+}
+
+/**
+ * Ссылки для подписки-отписки на главной странице.
+ */
+.slinks h2 {
+	display: none;
+}
+.slinks ul {
+	margin: 1em 0;
+	padding: 0;
+	list-style-type: none;
+	font-size: 1.25em;
+}
+.slinks li {
+	display: inline-block;
+	margin: 0 1em 0 0;
+}

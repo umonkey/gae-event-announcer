@@ -1,0 +1,165 @@
+body {
+	margin: 0;
+	padding: 0;
+	background-color: white;
+	color: black;
+	font: 10pt/1.25em Ubuntu, sans-serif;
+	padding-bottom: 50px;
+}
+
+a, .fakelink {
+	color: #008;
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+img {
+	border: 0;
+}
+
+h1 {
+	width: 480px;
+	margin: 10px auto 0;
+	font: normal 20pt/1.25em Ubuntu, sans-serif;
+}
+
+h2 {
+	font: normal 16pt/1.25em Ubuntu, sans-serif;
+}
+
+#wrapper {
+}
+
+.jcarousel-container {
+	width: 480px !important;
+	height: 220px;
+	margin: 0 auto;
+}
+
+.jcarousel-clip-horizontal {
+	width: 100% !important;
+	height: 100% !important;
+}
+
+.jcarousel-prev, .jcarousel-next {
+	top: 180px !important;
+}
+
+#jc li {
+	width: 150px;
+	height: 300px;
+	margin: 0 5px 0;
+}
+
+li .poster {
+	width: 150px;
+	height: 200px;
+	overflow: hidden;
+}
+li .discount {
+	cursor: help;
+}
+li .links {
+	margin: 5px 0 0;
+}
+li .links img {
+	vertical-align: middle;
+}
+
+.poster img {
+	width: 150px;
+	min-height: 200px;
+}
+
+
+/**
+ * Отключаем стилизацию tango.
+ */
+#dc .jcarousel-container {
+	border: none;
+	background-color: transparent;
+}
+
+
+/**
+ * Простой список событий под каруселью.
+ */
+#schedule {
+	display: block;
+	width: 350px;
+	line-height: 1.5em;
+	margin: 0 auto;
+}
+#schedule p {
+	margin: 0;
+}
+#schedule td {
+	font-size: 10pt;
+	vertical-align: top;
+}
+#schedule .past {
+	display: none;
+	color: gray;
+	font-weight: normal !important;
+}
+#schedule .soon {
+	font-weight: bold;
+}
+#schedule .date {
+	color: gray;
+	padding-right: .5em;
+}
+#schedule .title:hover {
+	color: #008;
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+
+/**
+ * Боковые ссылки.
+ */
+#sidebar {
+	position: absolute;
+	top: 50px;
+	left: 50%;
+	margin-left: 300px;
+}
+#sidebar ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+#sidebar li {
+	margin: .5em 0;
+	font: normal 12pt/1.5em sans-serif;
+}
+
+
+/**
+ * Формы.
+ */
+form {
+	width: 480px;
+	margin: 1em auto 0;
+	text-align: left;
+}
+form div {
+	margin: 0 0 .75em;
+}
+form label {
+	display: block;
+	margin: 0 0 .25em;
+}
+form input.text {
+	width: 400px;
+	border: solid 1px #bbb;
+	padding: 4px 6px;
+	background: white url(data:image/gif;base64,R0lGODlhAQAFAKIAAPHx8e7u7vv7+/b29v///wAAAAAAAAAAACH5BAAAAAAALAAAAAABAAUAAAMEGDBCCQA7) repeat-x scroll center top;
+}
+form .hint {
+	margin: 0;
+	color: #444;
+	font-style: italic;
+	font-family: serif;
+}

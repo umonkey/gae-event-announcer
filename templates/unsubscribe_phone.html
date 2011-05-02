@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Отказ от напоминаний по SMS</h2>
+<p>На номер {{ phone_number }} был отправлен 4-значный код подтверждения отказа от подписки, введите его:</p>
+<form method="post">
+<input type="text" class="text" name="code"/>
+<input type="submit" value="Подтвердить"/>
+</form>
+{% endblock %}

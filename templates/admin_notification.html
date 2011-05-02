@@ -1,0 +1,14 @@
+{% if email %}
+  {% if email.confirmed %}
+    <p>Почтовый адрес {{ email.email }} добавлен в список рассылки.</p>
+  {% else %}
+    <p>Почтовый адрес {{ email.email }} удалён из списка рассылки.</p>
+  {% endif %}
+{% endif %}
+{% if phone %}
+  {% if phone.confirmed %}
+    <p>Номер {{ phone.phone }} добавлен в список рассылки.</p>
+  {% else %}
+    <p>Номер {{ phone.phone }} удалён из списка рассылки.</p>
+  {% endif %}
+{% endif %}

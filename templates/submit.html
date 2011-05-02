@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block content %}
+<form method="post" action="/submit">
+  <h2>{% if event_exists %}Редактирование события{% else %}Добавление события{% endif %}</h2>
+  <p>После добавления события пройдёт какое-то время, прежде чем оно появится в списке: модератор должен проверить информацию и устранить неточности, если они есть.  Чем полнее будет информация, тем скорее событие будет одобрено.</p>
+  {% if login_uri %}<p>Если вы — администратор, <a href="{{ login_uri|escape }}">представьтесь</a> и добавляйте событие мимо модератора.</p>{% endif %}
+  {% if event_exists %}<input type="hidden" name="key" value="{{ event.key|escape }}"/>{% endif %}
+  <div>
+    <label for="edate">Дата:</label>
+    <input id="edate" type="text" class="text" name="date" value="{% if event.date %}{{ event.date|escape }}{% endif %}"/>
+    <p class="hint">Формат: «ГГГГ-ММ-ДД ЧЧ:ММ», время московское.</p>
+  </div>
+  <div>
+    <label for="etitle">Заголовок:</label>
+    <input id="etitle" type="text" class="text" name="title" value="{% if event.title %}{{ event.title|escape }}{% endif %}"/>
+    <p class="hint">Суть и место проведения.  Лучше всего перечислить хедлайнеров, только не много, иначе не влезет в SMS.  Пример: «Haujobb, The-Pulsar (RedClub)».</p>
+  </div>
+  <div>
+    <label for="eurl">URL:</label>
+    <input id="eurl" type="text" class="text" name="url" value="{% if event.url %}{{ event.url|escape }}{% endif %}"/>
+    <p class="hint">Ссылка на описание события.  Обычно это встреча в контакте или фейсбуке.</p>
+  </div>
+  <div>
+    <label for="eposter">Постер (картинка):</label>
+    <input id="eposter" type="text" class="text" name="poster" value="{% if event.poster %}{{ event.poster|escape }}{% endif %}"/>
+    <p class="hint">Ссылка на картинку.  Идеальный размер: 200×250, картинки сильно отличающихся размеров будут выглядеть по-уродски.</p>
+  </div>
+  <div>
+    <label for="evideo">Клип (страница в YouTube итп):</label>
+    <input id="evideo" type="text" class="text" name="video"{% if event.video %} value="{{ event.video|escape }}"{% endif %}/>
+    <p class="hint">Не надо давать ссылки на видео ВКонтакте, т.к. они мало кому доступны.  Найдите это видео в Ютубе.</p>
+  </div>
+  <div>
+    <label><input type="checkbox" name="discount"{% if event.discount %} checked="checked"{% endif %}/> Есть скидки для участников рассылки</label>
+  </div>
+  <input type="submit" value="Добавить"/> или <a href="/">вернуться к афише</a>
+</form>
+{% endblock %}

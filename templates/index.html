@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block content %}
+
+<ul id="jc" class="jcarousel-skin-tango">
+{% for event in events %}
+  <li>
+    <div class="poster">{% if event.url %}<a href="{{ event.url }}" title="{{ event.title|escape }}" target="_blank">{% endif %}<img src="{{ event.poster }}" alt="poster"/>{% if event.url %}</a>{% endif %}</div>
+    <div class="links">
+      <span class="date">{{ event.date|date:"d.m" }}</span>
+      {% if event.video %} &middot; <a class="video external" href="{{ event.video }}" target="_blank"><img src="/static/video.png" alt="video"/></a>{% endif %}
+      {% if event.discount %} &middot; <img class="discount" title="На входе дают скидки при показе SMS-сообщения из нашей рассылки." src="/static/money.png" alt="discount"/>{% endif %}
+      {% if admin %} &middot; <a href="/submit?key={{ event.key }}">E</a>{% endif %}
+    </div>
+  </li>
+{% endfor %}
+</ul>
+
+<div id="schedule">
+  <p id="showpast" class="fakelink">Показать прошедшие</p>
+  <table>
+    <tbody>
+      {% for event in events %}
+        <tr class="{{ event.css_class }}">
+          <td class="date">{{ event.date|date:"d.m"}}</td>
+          <td class="title">{{ event.title }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+<div id="sidebar">
+  <ul>
+    <li><a href="/subscribe">SMS/email рассылка</a></li>
+    <li><a href="/submit">Промоутерам</a></li>
+  </ul>
+</div>
+
+{% endblock %}
